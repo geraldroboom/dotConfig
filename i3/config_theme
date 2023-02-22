@@ -1,0 +1,16 @@
+exec --no-startup-id feh --no-fehbg --bg-fill ~/Pictures/Wallpapers/015.jpg
+
+# floating windows
+for_window [class="Gcolor3"] floating enable
+
+# floating pop up automatically
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+# no borders
+for_window [class="^.*"] border pixel 2
+                          # class                 border  backgr. text    indicator child_border
+for_window [class="^.*"] client.focused          #5c1e16 #5c1e16 #ffffff #5c1e16 #5c1e16
+
+# no borders on lone windows
+hide_edge_borders smart_no_gaps

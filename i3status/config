@@ -1,0 +1,59 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+general {
+    colors = true
+    interval = 1
+    color_good="#FFFFFF"
+    color_degraded="#ffd75f"
+    color_bad="#d75f5f"
+}
+
+order += "disk /"
+order += "cpu_usage"
+order += "memory"
+order += "load"
+order += "wireless wlan0"
+order += "ethernet et1"
+order += "battery all"
+order += "tztime local"
+
+battery all {
+	format = "%status %percentage %remaining"
+}
+
+wireless wlan0 {
+	format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = ""
+}
+
+ethernet eth1 {
+        format_up = "E: %ip (%speed)"
+        format_down = "Test"
+}
+
+tztime local {
+        format = " %Y-%m-%d %H:%M:%S "
+}
+
+
+disk "/" {
+     format = " %avail "
+}
+
+cpu_usage {
+    format = " %usage "
+}
+
+cpu_temperature 0 {
+        format = "T: %degrees °C"
+        path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+memory {
+        format = "%used"
+}
+
+load {
+    format = " %1min"
+}

@@ -1,0 +1,7 @@
+assign [class="Opera"] $ws2
+assign [class="Thunderbird"] $ws3
+assign [class="Discord"] $ws4
+
+exec_always volumeicon
+exec_always clipit
+exec_always picom
